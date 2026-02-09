@@ -1,0 +1,27 @@
+package formatTask;
+
+public class FormatTask02 {
+   public static void main(String[] args) {
+//      %자릿수d
+//      %5d
+	   int scoreMath = 0;
+	   int scoreKorean = 0;
+	   int scoreEnglish = 0;
+	   int totalScore = 0;
+	   String name = null;
+	   String result = null;
+//      국어점수, 영어점수, 수학점수를 받아서 서식에 맞게 출력
+//      이름: 이규학
+//      수학:    20점
+//      국어:    40점
+//      영어:    15점
+//      총점:    75점
+	   name = "노규호";
+	   scoreMath = 40;
+	   scoreKorean = 35;
+	   scoreEnglish = 30;
+	   totalScore = scoreMath + scoreKorean + scoreEnglish;
+	   result = "이름:%5s\n수학:%5d점\n국어:%5d점\n영어:%5d점\n총점:%5d점";
+	   System.out.printf(result, name, scoreMath, scoreKorean, scoreEnglish, totalScore);
+   }
+}

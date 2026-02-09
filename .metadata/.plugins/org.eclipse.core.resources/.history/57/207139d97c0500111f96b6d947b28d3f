@@ -1,0 +1,7 @@
+package formatTest;
+
+public class FormatTask01 {
+	public static void main(String[] args) {
+//		식을 완성시키시오.
+	}
+}

@@ -1,0 +1,9 @@
+package variableTest;
+
+public class VariableTest {
+	public static void main(String[] args) {
+		int a = 0;
+		float b = 0.0f;
+		double c = 0.0;
+	}
+}

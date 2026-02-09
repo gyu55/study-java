@@ -1,0 +1,10 @@
+package formatTest;
+
+public class FormatTask01 {
+	public static void main(String[] args) {
+//		식을 완성시키시오.
+//		10 + 20 = 30
+//		7 * 8 = 56
+//		6 * 4 = 24
+	}
+}
