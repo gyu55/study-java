@@ -17,16 +17,23 @@ import java.util.Scanner;
 // 입력값: 10, 50, 30, -20, 10, 20
 public class WhileTask02 {
 	public static void main(String[] args) {
-//		System.out.println("");
+		System.out.println("정수를 입력하세요.");
 		int sum = 0;
+		String result = "";
 		String sumResult = "";
 		Scanner sc = new Scanner(System.in);
 		while (true) {
-			sum += sc.nextInt();
-			if(sum >= 100) {
-				System.out.println();
-				break;
-			}
-		}
+            int num = sc.nextInt();  // 정수로 바로 입력받기
+            sum += num;
+
+            // 입력값을 문자열에 추가
+            result += num + ", ";
+
+            if (sum >= 100) {
+                System.out.println("sum= " + sum);
+                System.out.println("입력값: " + result.substring(0, result.length() - 2));
+                break;
+            }
+        }
 	}
 }
