@@ -1,7 +1,0 @@
-package formatTest;
-
-public class FormatTest {
-	public static void main(String[] args) {
-		System.out.printf();
-	}
-}

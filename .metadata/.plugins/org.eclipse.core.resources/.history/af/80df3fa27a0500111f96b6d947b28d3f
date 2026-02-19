@@ -1,8 +1,0 @@
-package formatTest;
-
-public class FormatTest {
-	public static void main(String[] args) {
-//		System.out.printf(); printf의 f는 format
-//		즉, format을 지켜서 출력하겠다.
-	}
-}
