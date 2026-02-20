@@ -21,7 +21,7 @@ class PersonTask {
 		this.address = address;
 		this.phoneNum = phoneNum;
 	}
-
+	
 	void work() {
 		System.out.println("일을 한다.");
 	}
@@ -47,12 +47,15 @@ class StudentTask extends PersonTask{
 		super(name, age, address, phoneNum);
 		this.instaId = instaId;
 	}
+	@Override
 	void work() {
 		System.out.println("아르바이트를 한다.");
 	}
+	@Override
 	void sleep() {
 		System.out.println("수업 시간에 잠을 잔다.");
 	}
+	@Override
 	void eat() {
 		System.out.println("아침을 거른다.");
 	}
@@ -72,12 +75,15 @@ class EmployeeTask extends PersonTask {
 		super(name, age, address, phoneNum);
 		this.nestEgg = nestEgg;
 	}
+	@Override
 	void work() {
 		System.out.println("하루 종일 일을 한다.");
 	}
+	@Override
 	void sleep() {
 		System.out.println("잠을 설친다.");
 	}
+	@Override
 	void eat() {
 		System.out.println("야식을 먹는다.");
 	}
@@ -92,6 +98,7 @@ public class InheritanceTask {
 	   person.work();
 	   person.sleep();
 	   person.eat();
+	   
 	   System.out.println("=========================");
 	   StudentTask student = new StudentTask("장보고", 15, "경기도 남양주시", "010-1234-1111", "jang_vely");
 	   System.out.println("인스타 아이디 = " + student.instaId);
