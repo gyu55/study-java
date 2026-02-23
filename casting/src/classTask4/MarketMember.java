@@ -8,10 +8,8 @@ public class MarketMember extends User{
 	public MarketMember() {;}
 
 
-	public MarketMember(double memberDiscount, double memberPoint) {
-		super();
-		this.memberDiscount = memberDiscount;
-		this.memberPoint = memberPoint;
+	public MarketMember(String name, String phoneNum, int money, int point, int coupon) {
+		super(name, phoneNum, money, point, coupon);
 	}
 
 

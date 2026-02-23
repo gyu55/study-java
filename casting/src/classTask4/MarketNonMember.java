@@ -6,10 +6,8 @@ public class MarketNonMember extends User{
 	
 	public MarketNonMember() {;}
 
-	public MarketNonMember(double nonMemberDiscount, double nonMemberPoint) {
-		super();
-		this.nonMemberDiscount = nonMemberDiscount;
-		this.nonMemberPoint = nonMemberPoint;
+	public MarketNonMember(String name, String phoneNum, int money, int point, int coupon) {
+		super(name, phoneNum, money, point, coupon);
 	}
 
 	public double getNonMemberDiscount() {

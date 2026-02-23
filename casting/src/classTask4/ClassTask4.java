@@ -42,10 +42,15 @@ package classTask4;
 public class ClassTask4 {
 	public static void main(String[] args) {
 		Market mk = new Market();
-		Product p1 = new Product("굿", 1_000, 1);
+		Product p1 = new Product("굿", 1_000, 10);
 		mk.register(p1);
 		
-		MarketMember user1 = new MarketMember();
+		MarketMember user1 = new MarketMember("노규호", "010-1234-1234", 10_000, 100, 10);
 		mk.memberSell(user1, p1);
+		mk.showMemberPoint(user1);
+		
+		MarketNonMember user2 = new MarketNonMember("노규호", "010-1234-1234", 10_000, 100, 9);
+		mk.nonMemberSell(user2, p1);
+		mk.showNonMemberPoint(user2);
 	}
 }

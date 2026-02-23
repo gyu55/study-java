@@ -33,11 +33,18 @@ public class Market {
 	
 	public void memberSell(MarketMember user, Product product) {
 		for(int i = 0; i < products.length; i++) {
+			int memberPrice = (int)(products[i].getPrice());
+			if(user.getCoupon() == 10) {
+				System.out.println("쿠폰사용!\n상품 가격(회원가): 0원");
+				user.setCoupon(0);
+				break;
+			}
 			if(products[i].equals(product) && products[i].getInventory() > 0) {
-				System.out.println("상품 가격(회원가): " + (int)(products[i].getPrice() * user.getMemberDiscount()));
-				System.out.println("해당 상품의 남은 재고: " + products[i].getInventory());
-				user.setMemberPoint((products[i].getPrice() * user.getMemberPoint()));
+				System.out.println("상품 가격(회원가): " + (int)(memberPrice - (memberPrice * user.getMemberDiscount())));
 				products[i].setInventory(products[i].getInventory() - 1);
+				System.out.println("해당 상품의 남은 재고: " + products[i].getInventory());
+				user.setMemberPoint(user.getMemberPoint() + (products[i].getPrice() * user.getMemberPoint()));
+				user.setCoupon(user.getCoupon() + 1);
 				break;
 			}else if(products[i].equals(product) || products[i].getInventory() < 0){
 				System.out.println("해당 제품의 재고가 부족합니다. 대단히 죄송합니다.");
@@ -47,5 +54,37 @@ public class Market {
 				break;
 			}
 		}
+	}
+	public void nonMemberSell(MarketNonMember user, Product product) {
+		for(int i = 0; i < products.length; i++) {
+			int nonMemberPrice = (int)products[i].getPrice();
+			if(products[i].equals(product) && products[i].getInventory() > 0) {
+				if(user.getCoupon() == 10) {
+					System.out.println("쿠폰사용!\n상품 가격(비회원가): 0원");
+					user.setCoupon(0);
+					break;
+				}
+				System.out.println("상품 가격(비회원가): " + (int)(nonMemberPrice - (nonMemberPrice * user.getNonMemberDiscount())));
+				products[i].setInventory(products[i].getInventory() - 1);
+				System.out.println("해당 상품의 남은 재고: " + products[i].getInventory());
+				user.setNonMemberPoint(user.getNonMemberPoint() + (products[i].getPrice() * user.getNonMemberPoint()));
+				user.setCoupon(user.getCoupon() + 1);
+				break;
+			}else if(products[i].equals(product) || products[i].getInventory() < 0){
+				System.out.println("해당 제품의 재고가 부족합니다. 대단히 죄송합니다.");
+				break;
+			}else {
+				System.out.println("잘못된 접근입니다.");
+				break;
+			}
+		}
+	}
+	public void showMemberPoint(MarketMember user) {
+		System.out.println(user.getName() + "님의 포인트 : " + (int)user.getMemberPoint());
+		System.out.println("쿠폰 수량 = " + user.getCoupon());
+	}
+	public void showNonMemberPoint(MarketNonMember user) {
+		System.out.println(user.getName() + "님의 포인트 : " + (int)user.getNonMemberPoint());
+		System.out.println("쿠폰 수량 = " + user.getCoupon());
 	}
 }
