@@ -2,9 +2,12 @@ package classTask4;
 
 public class Market {
 	String name;
-	Product[] products = new Product[5];
+	Product[] products;
 	int productCount = 0;
 	
+	{
+		this.products = new Product[5];
+	}
 	
 	public Market() {;}
 
